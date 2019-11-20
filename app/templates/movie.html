@@ -1,0 +1,22 @@
+{% extends 'base.html' %}
+<!-- content block -->
+{% block content%}
+<div class="container">
+
+    <!-- poster background -->
+    <div class="row">
+        <div class='col-md-6 posterPath' 
+        style='background: url({{movie.poster}}) 
+        no-repeat center center'>
+        </div>
+        
+        <div class="col-md-6 movie_details">
+            <h3> {{movie.title}} </h3>
+            <p class="overview"> {{movie.overview}} </p>
+            <p class="ratings"> <b> {{movie.vote_average}} </b> - <i> {{movie.vote_count}} </i> </p>
+            <a class="ratings" href="/movie/review/new/{{movie.id}}">write a new review</a>
+        </div>
+
+    </div>
+</div>
+{% endblock %}

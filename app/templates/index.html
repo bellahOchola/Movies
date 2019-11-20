@@ -1,0 +1,47 @@
+
+
+{% extends 'base.html' %}
+{% import 'macros.html' as macro %}
+
+<!-- styles block -->
+{% block styles %}
+    {{super()}}
+    <link = 'stylesheet' href="{{url_for('static',filename='css/index.css')}}">
+{% endblock %}
+
+<!-- Content block -->
+{% block content %}
+<div class="container">
+    <form>
+        <input type="text" name="movie_query" placeholder="Search for a Movie" class="form-control">
+        <input type="submit"  value="Submit" class="btn btn-default">
+    </form>
+
+</div>
+<h3> Popular Movies</h3>
+<ul>
+    {{ macro.displayMovieList(popular)}}
+</ul>
+{% endblock %}
+
+<!-- <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    {% if title %}
+    <title> {{title}} </title>
+    {% else %}
+    <title> Welcome to the best movie review website </title>
+    {% endif %}
+</head>
+<body> -->
+    <!-- popular movie section
+    <h3>Popular Movies</h3>
+    <ul>
+        {{ macro.displayMovieList(popular) }}
+    </ul> -->
+   
+
+    
+<!-- </body>
+</html> -->
